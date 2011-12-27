@@ -1,0 +1,186 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+	  xmlns:tal="http://xml.zope.org/namespaces/tal"
+	  xmlns:metal="http://xml.zope.org/namespaces/metal"
+	  xmlns:i18n="http://xml.zope,org/namespaces/i18n"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="kaab.blogcontent">
+<body>
+    <div metal:fill-slot="main">
+        <tal:main-macro metal:define-macro="main">
+		<div id="content">
+		<div class="blogItem">
+		<h1 class="documentFirstHeading">
+			<tal:block tal:define="active_theme_filter python:context.REQUEST.get('theme_filter');
+                          		   active_subject_filter python:context.REQUEST.get('subject_filter')">
+			<span tal:condition="not: python:active_theme_filter or active_subject_filter">
+				Archive
+			</span>
+			<span tal:condition="active_theme_filter"
+				tal:content="python:'__'.join(active_theme_filter)">
+				theme filter
+			</span>
+			<span tal:condition="active_subject_filter"
+				tal:content="python:'__'.join(active_subject_filter)">
+				subject filter
+			</span>
+			</tal:block>
+		</h1>
+		</div>
+
+		<tal:filtered tal:condition="view/has_filter">
+
+		<tal:filtered_entries tal:define="fes view/filtered_blogentries">
+			<tal:block tal:repeat="fe fes">
+
+			<div class="blogItem">
+				<div class="dotted-line">&nbsp;</div>
+
+                <div id="category"
+                  class="documentByLine"
+                  tal:define="categories fe/categories|nothing;
+                              themes fe/theme|nothing">
+
+                  <div class="tileDate"
+					tal:content="fe/modified">
+                  August 16, 2001 at 23:35:59
+                  </div>
+
+						<div class="catIntro">
+							filed under:
+						</div>
+				 <span tal:repeat="theme themes">
+				   <a href=""
+				      class="link-category"
+				      rel="tag"
+				      tal:content="theme"
+				      tal:attributes="href string:${context/portal_url}/archive_view?theme_filter%3Alist=${theme}">
+				     Category
+				   </a><tal:separator>__</tal:separator>
+				 </span>
+                  <span tal:repeat="category categories">
+                    <a href=""
+                       class="link-category"
+                       rel="tag"
+                       tal:content="category"
+                       tal:attributes="href string:${context/portal_url}/archive_view?subject_filter%3Alist=${category}">
+                      Category
+                    </a><tal:separator condition="not: repeat/category/end">__</tal:separator>
+                  </span>
+                </div>
+				<div class="dotted-line">&nbsp;</div>
+				<div class="entryHeading">
+					<a href="" tal:attributes="href fe/url"
+						tal:content="structure fe/title">link to blogentry
+					</a>
+				</div>
+				<div  class="entryImage">
+				<a href="" tal:attributes="href fe/url">
+				<img src="" tal:replace="structure fe/image" />
+				</a>
+				</div>
+				<div class="entryDescription"
+					tal:content="structure fe/teaser">
+					Description/Teaser
+				</div>
+
+				<div class="entryDiscreet">
+				<span>
+    				<a href=""
+       					tal:attributes="href fe/url"
+       					>
+    					Weiterlesen
+    				</a>
+				</span> |
+				<span>
+                Kommentare
+                </span>
+                <tal:comments tal:define="comments fe/comments;
+                                          number_of_comments python:len(comments)">
+					(<span tal:content="number_of_comments">0</span>)
+				</tal:comments>
+				</div>
+			</div>
+			</tal:block>
+		</tal:filtered_entries>
+		</tal:filtered>
+
+		<tal:blogentries tal:condition="not: view/has_filter">
+		<tal:block tal:define="entries view/blogentries">
+			<tal:entries tal:repeat="entry entries">
+			<div class="blogItem">
+				<div class="dotted-line">&nbsp;</div>
+
+                <div id="category"
+                  class="documentByLine"
+                  tal:define="categories entry/categories|nothing;
+                              themes entry/theme|nothing">
+
+                  <div class="tileDate"
+					tal:content="entry/modified">
+                  August 16, 2001 at 23:35:59
+                  </div>
+
+						<div class="catIntro">
+							filed under:
+						</div>
+				 <span tal:repeat="theme themes">
+				   <a href=""
+				      class="link-category"
+				      rel="tag"
+				      tal:content="theme"
+				      tal:attributes="href string:${context/portal_url}/archive_view?theme_filter%3Alist=${theme}">
+				     Category
+				   </a><tal:separator>__</tal:separator>
+				 </span>
+                  <span tal:repeat="category categories">
+                    <a href=""
+                       class="link-category"
+                       rel="tag"
+                       tal:content="category"
+                       tal:attributes="href string:${context/portal_url}/archive_view?subject_filter%3Alist=${category}">
+                      Category
+                    </a><tal:separator condition="not: repeat/category/end">__</tal:separator>
+                  </span>
+                </div>
+
+				<div class="dotted-line">&nbsp;</div>
+				<div class="entryHeading">
+					<a href="" tal:attributes="href entry/url"
+						tal:content="entry/title">link to blogentry
+					</a>
+				</div>
+				<div  class="entryImage">
+				<img src="" tal:replace="structure entry/image" />
+				</div>
+				<div class="entryDescription"
+					tal:content="structure entry/teaser">
+					Description/Teaser
+				</div>
+
+				<div class="entryDiscreet">
+				<span>
+    				<a href=""
+       					tal:attributes="href entry/url"
+       					>
+    					Weiterlesen
+    				</a>
+				</span> |
+				<span>
+                Kommentare
+                </span>
+                <tal:comments tal:define="comments entry/comments;
+                                          number_of_comments python:len(comments)">
+					(<span tal:content="number_of_comments">0</span>)
+				</tal:comments>
+				</div>
+
+			</div>
+			</tal:entries>
+		</tal:block>
+		</tal:blogentries>
+		</div>
+        </tal:main-macro>
+    </div>
+</body>
+</html>

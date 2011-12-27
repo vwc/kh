@@ -1,0 +1,58 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="kaab.blogcontent">
+
+    <include package="plone.app.contentmenu" />
+
+    <!-- -*- extra stuff goes here -*- -->
+
+    <browser:page
+      for="Products.CMFCore.interfaces.ISiteRoot"
+      name="frontpage_view"
+      class=".frontpage.FrontPageView"
+      permission="zope.Public"
+    />
+
+
+    <browser:page
+      for="..interfaces.IBlogFolder"
+      name="view"
+      class=".blogfolder.blogfolderView"
+      permission="zope.Public"
+    />
+	
+	<browser:menuItem
+	  for="..interfaces.IBlogFolder"
+	  menu="plone_displayviews"
+	  title="BlogFolder View"
+	  action="@@view"
+	  description="Default view of a blog folder"
+	/>
+
+
+    <browser:page
+      for="Products.CMFCore.interfaces.ISiteRoot"
+      name="archive_view"
+      class=".archive.archiveView"
+      permission="zope.Public"
+    />
+
+
+    <browser:page
+      for="..interfaces.IBlogEntry"
+      name="view"
+      class=".blogentry.BlogEntryView"
+      permission="zope.Public"
+    />
+	
+	<browser:menuItem
+	  for="..interfaces.IBlogEntry"
+	  menu="plone_displayviews"
+	  title="BlogEntry View"
+	  action="@@view"
+	  description="Default view of a blog entry"
+	/>
+
+
+</configure>

@@ -1,0 +1,14 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="kaab.theme">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="kaab theme"
+      directory="profiles/default"
+      description='Extension profile for the "kaab theme" Plone theme.'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+</configure>

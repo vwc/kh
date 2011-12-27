@@ -1,0 +1,2 @@
+recursive-include kaab *
+global-exclude *pyc

@@ -1,0 +1,37 @@
+<dl class="portlet portletBlogThemes"
+	id="portlet-blogthemes"
+    i18n:domain="kaab.blogcontent.portlets">
+
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+        <span>
+           Themen
+        </span>
+        <span class="portletTopRight"></span>
+    </dt>
+
+    <dd class="portletItem odd">
+		<ul id="blogThemes"
+		    class="navTree"
+			tal:define="cats view/themes">
+			<li class="navItem" tal:repeat="cat cats">
+				  <a href=""
+		             class="link-category"
+		             rel="tag"
+		             tal:content="cat"
+		             tal:attributes="href string:${context/portal_url}/archive_view?theme_filter%3Alist=${cat}">
+		            Category
+		          </a>
+			</li>
+		</ul>
+    </dd>
+
+    <dd class="portletFooter">
+        <span class="portletBottomLeft"></span>
+        <span>
+           &nbsp;
+        </span>
+        <span class="portletBottomRight"></span>
+    </dd>
+
+</dl>

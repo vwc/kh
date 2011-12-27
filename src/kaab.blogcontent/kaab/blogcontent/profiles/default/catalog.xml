@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<object
+  name="portal_catalog"
+  meta_type="Plone Catalog Tool">
+    <index name="getTheme" meta_type="KeywordIndex">
+      <indexed_attr value="theme" />
+    </index>
+	<index name="getSummary" meta_type="FieldIndex">
+	  <indexed_attr value="summary" />
+	</index>
+
+    <column value="getTheme" />
+	<column value="getSummary" />
+
+</object>

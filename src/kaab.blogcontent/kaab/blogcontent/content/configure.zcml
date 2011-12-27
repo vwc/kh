@@ -1,0 +1,38 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    i18n_domain="kaab.blogcontent">
+
+    <!-- configure your content components here -->
+
+    <!-- -*- extra stuff goes here -*- -->
+    <class class=".blogfolder.BlogFolder">
+
+        <require
+            permission="zope2.View"
+            interface="..interfaces.IBlogFolder"
+            />
+
+        <require
+            permission="cmf.ModifyPortalContent"
+            set_schema="..interfaces.IBlogFolder"
+            />
+
+    </class>
+    <class class=".blogentry.BlogEntry">
+
+        <require
+            permission="zope2.View"
+            interface="..interfaces.IBlogEntry"
+            />
+
+        <require
+            permission="cmf.ModifyPortalContent"
+            set_schema="..interfaces.IBlogEntry"
+            />
+
+    </class>
+
+	<adapter factory=".blogentry.ImageProvider" />
+
+</configure>

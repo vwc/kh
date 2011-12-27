@@ -1,0 +1,705 @@
+/* Stylesheet for the 'kaab theme' Plone theme */
+
+body {
+    font-family: 'Times New Roman', Times, Verdana, Lucida, Helvetica, Arial, sans-serif;
+    background: white;
+}
+
+#visual-site-wrapper {
+    width: 1024px;
+    padding: 0px;
+    background: white;
+    margin: 0px auto 0px auto;
+/**    border: 1px solid #339999; **/
+}
+
+/** @portal-top **/
+
+#portal-top {
+    margin: 0px 0px 10px 0px;
+    padding: 0px;
+}
+
+/* Logo properties */
+#portal-logo img {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#portal-globalnav {
+    margin: 0px 0px 5px 0px;
+    padding: 10px 10px 5px 120px;
+    background: url(++resource++kaab.theme.images/globalnav.jpg) no-repeat right bottom white;
+    height: 30px;
+    text-align: center;
+    font-family: Arial;
+}
+
+#portal-globalnav li {
+    border: 0px;
+    padding: 0px;
+    margin: 0px 15px 0px 0px;
+    float: left;
+    background: transparent;
+}
+
+#portal-globalnav li a {
+    color: black;
+    font-size: 100%;
+    float: left;
+    height: 14px;
+    border: 0px;
+    border-bottom: 1px solid black;
+    margin: 0px;
+    padding: 8px 0px 0px 0px;
+    text-transform: none;
+    background: transparent;
+}
+
+#portal-globalnav li a:hover {
+    color: #339999;
+    background: transparent;
+}
+
+#portal-globalnav li.selected a {
+    color: #339999;
+    background: transparent;
+    border: 0px;
+    height: 14px;
+    margin: 0px;
+    padding: 8px 0px 0px 0px;
+}
+
+li#portaltab-index_html,
+li#portaltab-index_html  {
+    background: transparent;
+}
+
+#portal-personaltools {
+    background: white;
+    border: 0px;
+}
+
+#portal-personaltools li a {
+    color: #339999;
+}
+
+/* @group Columns */
+
+#portal-columns {
+	padding-bottom: 10px;
+    margin-bottom: 0px;
+}
+
+/* @group Column One */
+
+#portal-column-one {
+}
+
+
+/* @end */
+
+/* @end */
+
+/* @group Column Two */
+
+#portal-column-two {
+    background: url(++resource++kaab.theme.images/grayline.gif) repeat-x bottom left white;
+}
+
+.narrow #portal-column-two {
+}
+
+#portal-column-one .visualPadding {
+    padding: 10px 0px 10px 10px;
+}
+#portal-column-two .visualPadding {
+    padding: 10px 10px 10px 0px;
+}
+
+#portal-column-content {
+	background: transparent;
+}
+
+* html #portal-content-wrapper {
+	width: 780px;
+}
+
+#region-content {
+	line-height: 1.5em;
+	position:relative;
+	font-size: 110%;
+}
+
+#region-content p,
+#region-content ul,
+#region-content ol,
+#region-content table,
+#region-content dl {
+	margin-top: 0;
+	margin-bottom: 1em;
+	line-height: 115%;
+	color: black;
+	font-size: 100%;
+}
+/** @ reset headline font definitions **/
+h1, h2, h3, h4, h5, h6 {
+    font-family: Times;
+}
+
+/**  @region-content **/
+
+.documentContent {
+	padding: 0px 10px 0px 0px !important;
+	font-size: 100%;
+}
+
+.documentEditable .documentContent {
+    border: 0px;
+}
+
+#content {
+	padding-left: 60px;
+}
+
+.documentFirstHeading {
+    border: 0px;
+    color: #272526;
+    font-size: 140%;
+	margin: 10px 0px 0px 60px;
+}
+
+.documentFirstHeading a {
+    color: #272625 !important;
+    text-decoration: none;
+}
+
+.documentDescription {
+    margin: 0px 200px 0px 59px;
+}
+
+#region-content a:link {
+    color: #272526;
+    font-weight: bold;
+}
+
+#region-content a:visited {
+    color: #339999;
+    font-weight: normal;
+}
+
+#region-content a:hover {
+    color: black;
+}
+
+#region-content .stx,
+#region-content .plain {
+	margin: 0px 200px 0px 60px;
+    font-size: 100%;
+}
+
+/* Handling external/internal links, we first set the icon on all links, then
+remove it from the ones that are local - for both http and https */
+#content a[href ^="http:"],
+#content a.link-external {
+    background: transparent;
+    padding: 1px 0px 1px 0px;
+}
+#content a[href ^="https:"],
+#content a.link-https {
+    background: transparent;
+    padding: 1px 0px 1px 0px;
+}
+#content a[href ^="&dtml-portal_url;"] {
+background: none;
+padding: 0;
+}
+
+
+/* Protocol-specific links */
+#content a[href ^="mailto:"],
+#content a.link-mailto {
+background: transparent;
+padding: 1px 0px 1px 0px;
+}
+#content a[href ^="news:"],
+#content a.link-news {
+    background: transparent;
+    padding: 1px 0px 1px 0px;
+}
+#content a[href ^="ftp:"],
+#content a.link-ftp {
+    background: transparent;
+    padding: 1px 0px 1px 0px;
+}
+#content a[href ^="irc:"],
+#content a.link-irc {
+    background: transparent;
+    padding: 1px 0px 1px 0px;
+}
+#content a[href ^="callto:"],
+#content a.link-callto {
+    background: transparent;
+    padding: 1px 0px 1px 0px;
+}
+#content a[href ^="webcal:"],
+#content a.link-webcal {
+    background: transparent;
+    padding: 1px 0px 1px 0px;
+}
+#content a[href ^="feed:"],
+#content a.link-feed {
+    background: transparent;
+    padding: 1px 0px 1px 0px;
+}
+
+#content .link-plain {
+    background: transparent;
+    padding: 1px 0px 1px 0px;
+}
+
+#region-content #event-link-parent {
+    margin: 15px 0px -10px 0px;
+    padding: 10px 0px 0px 10px;
+    font-size: 100%;
+}
+
+#region-content img {
+    border: 0px;
+}
+
+#content .plain p {
+    font-size: 100%;
+    line-height: 110%;
+}
+
+#content .stx p {
+    font-size: 100%;
+    line-height: 110%;
+}
+
+#content p.documentDescription,
+.tileItem p.documentDescription {
+    line-height: 110%;
+    font-size: 120%;
+    margin-right: 200px;
+    font-weight: normal;
+}
+
+#content .stx ul {
+    list-style: none;
+    margin: 0px 0px 10px 15px;
+}
+
+#content .stx ul li {
+    list-style-image: none;
+    background: url(++resource++kaab.theme.images/bullet.gif) no-repeat 0px 6px transparent;
+    padding: 0px 0px 0px 7px;
+    font-size: 100%;
+    margin: 0px;
+}
+
+#content h2 {
+    font-size: 120%;
+    border: 0px;
+    color: #272526;
+}
+
+#content h3 {
+    font-size: 110%;
+    color: #76797c;
+    font-weight: normal;
+}
+
+.blogItem {
+}
+
+.entryHeading {
+    border: 0px;
+    color: #272526;
+    font-size: 145%;
+	margin: 10px 0px 10px 60px;
+}
+
+.entryHeading a:link {
+    text-decoration:none;
+    color: #272526 !important;
+    font-weight: normal !important;
+}
+
+.entryHeading a:visited {
+    text-decoration:none;
+    color: #272526 !important;
+    font-weight: normal;
+}
+.entryHeading a:hover {
+    text-decoration:none;
+    color: #339999 !important;
+    font-weight: normal;
+}
+
+.entryDescription {
+    margin: 0px 200px 0px 59px;
+    line-height: 110%;
+    font-size: 100%;
+    font-weight: normal
+}
+
+.entryDescriptionSmall {
+    margin: 0px 200px 0px 59px;
+    line-height: 110%;
+    font-size: 100%;
+    font-weight: normal
+}
+
+.entryDiscreet {
+    margin-right: 30px;
+}
+
+span.greyText {
+    color: #76797c;
+}
+
+span.magentaText,
+h2.magenta,
+h3.magenta {
+    color: #990066 !important;
+}
+
+span.greenText,
+h2.green,
+h3.green {
+    color:#339999 !important;
+}
+
+/** end region content *****************/
+
+/** @ dotted line **********************/
+
+.dotted-line {
+    background:  url(++resource++kaab.theme.images/dotted.gif) repeat-x 0px 0px white;
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+    line-height: 2px;
+    clear: both;
+}
+
+/** end dotted line *******************/
+
+/****** @ folder_summary_view *********/
+
+.tileItem,
+.vevent {
+    font-size: 14px;
+    border: 0px;
+}
+
+.documentByLine div.catIntro {
+    display: none;
+}
+
+#category {
+    padding: 0px 0px 0px 60px;
+    margin: 0px 0px 0px 0px;
+    font-family: Arial;
+}
+
+#category a.link-category {
+    color: #339999 !important;
+    font-weight: normal;
+}
+
+.documentByLine a.link-category {
+    color: #339999 !important;
+    font-size: 110%;
+    text-decoration: none;
+}
+
+.tileDate {
+    width: 150px;
+    margin: 0px;
+    float: right;
+    color: #339999;
+}
+
+.tileItemBody {
+    padding: 0px;
+	margin: 0px;
+    font-size: 100% !important;
+    line-height: 110%;
+}
+
+.tileHeadline {
+    font-size: 140%;
+    margin-bottom: 15px;
+    color: #272625;
+    
+}
+
+p.tileBody {
+    line-height: 110%;
+    font-size: 14px !important;
+    font-weight: normal;
+}
+
+.tileBody .description {
+    font-size: 110%;
+    line-height: 115%;
+    color: #272625;
+}
+
+.discreet,
+.entryDiscreet {
+    color: #272625;
+    font-size: 90%;
+    text-align: right;
+    font-weight: normal;
+    text-transform: lowercase;
+}
+
+p.discreet a:link,
+.entryDiscreet a:link {
+    color: #339999 !important;
+    text-decoration: none;
+    font-weight: normal !important;
+}
+
+p.discreet a:visited,
+.entryDiscreet a:visited {
+    color: #339999 !important;
+    text-decoration: none;
+    font-weight: normal;
+}
+p.discreet a:hover,
+.entryDiscreet a:hover {
+    color: #272625;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+
+.banner-image {
+    margin: 10px 0px 15px 60px;
+    padding: 0px;
+}
+
+.entryImage {
+    margin: 10px 0px 15px 60px;
+    padding: 0px;
+}
+
+
+
+/** end content definitions **/
+
+/** @ documentActions **/
+
+.documentActions {
+    border: 0px;
+    background: url(++resource++kaab.theme.images/dotted.gif) left top repeat-x white;
+    padding-right: 20px;
+}
+
+/** @ discussion **/
+
+.discussion {
+    margin: 0px 200px 0px 120px;
+}
+
+.discussion input.standalone {
+    background: #339999;
+    color: white;
+    border-color: black;
+    padding-left: 0px;
+}
+
+.comment {
+    background: white;
+    border: 2px dotted #ccc;
+}
+
+.comment h3 {
+    color: #339999;
+    border: 0px;
+    background: url(++resource++kaab.theme.images/dotted.gif) left bottom repeat-x transparent;
+    margin: 0px;
+    padding: 0px;
+}
+
+.comment h3 a {
+    background: transparent;
+    padding: 0px;
+}
+
+.comment input.standalone,
+.comment input.destructive {
+    background: white;
+    border-color: black;
+    color: #339999;
+    padding-left: 0px;
+}
+
+.commentBody {
+    font-size: 90%;
+    line-height: 100%;
+}
+
+
+/** end discussion **/
+
+/** @ portlet definitions **/
+
+dl.portlet {
+   background: url(++resource++kaab.theme.images/dot.jpg) left bottom repeat-x white;
+   border: 0px;
+   padding-bottom: 5px;
+   font-family: Arial;
+   font-size: 90%;
+}
+
+dt.portletHeader {
+    border: 0px;
+    background: transparent;
+    color: #339999;
+    font-size: 120%;
+}
+
+dt.portletHeader a {
+    color: #339999;
+    text-transform: none;
+}
+
+.portletItem {
+    border: 0px;
+    padding: 5px 0px 5px 0px;
+}
+
+dd.portletFooter {
+    background:transparent;
+    border: 0px;
+}
+
+/** end portlet definitions **/
+
+/*** @ portlet-blogthemes **/
+
+#portlet-blogthemes .portletHeader,
+#portlet-kaab .portletHeader {
+    text-transform: none;
+}
+
+#portlet-blogthemes #blogThemes,
+#portlet-kaab #blogThemes {
+    padding: 0px 0px 0px 3px;
+    width: 100%;
+}
+
+#recent-blogentries-portlet .portletItem {
+    padding: 0px 4px 0px 16px;
+    margin: 0px;
+}
+
+#blogThemes .navItem a.link-category,
+#recent-blogentries-portlet .portletItem a {
+    color: black;
+    text-decoration:underline;
+}
+
+#blogThemes .navItem a:hover,
+#recent-blogentries-portlet .porteltItem a:hover {
+    color: #339999;
+}
+
+#recent-blogentries-portlet .portletFooter {
+    text-align: left;
+	background: url(++resource++kaab.theme.images/dot.jpg) left top repeat-x white;
+	padding-top: 10px;
+}
+
+#recent-blogentries-portlet .portletFooter a.archive-link {
+    font-size: 120%;
+    color: #339999;
+    padding-left: 3px;
+}
+
+/**@ navtree.css **/
+
+.portletNavigationTree {
+    padding: 0; 
+    list-style: none !important;
+    list-style-image: none !important; 
+    line-height: 1em;
+}
+
+.portletNavigationTree img {
+    display: none;
+}
+
+.navTree {
+    list-style: none; 
+    list-style-image: none; 
+    margin-top: 1px;
+    margin-left: 13px;
+}
+.navTree li {
+    margin-bottom: 1px;
+}
+.navTreeItem {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+.navTreeItem a,
+dd.portletItem .navTreeItem a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 0px;
+ /**   font-size: 100%; **/
+}
+.navTreeItem a:hover,
+dd.portletItem .navTreeItem a:hover {
+    background-color: transparent;
+    color: #339999;
+    border: 0px solid white;
+}
+.navTreeCurrentItem {
+    background-color: transparent;
+    color: #339999 !important;
+    border: 0px solid white !important;
+}
+li.navTreeCurrentItem {
+    display: block;
+    padding: 0 0 0 1px;
+    margin: 0 0 2px -1px;
+}
+li.navTreeCurrentItem a,
+li.navTreeCurrentItem a:hover {
+    display: block;
+    border: 0px solid white;
+    min-height: 1.6em;
+    line-height: 1.6em;
+    height: auto;
+}
+
+/** end of navtree.css **/
+/** @ portal footer **/
+
+#portal-footer {
+    background: url(++resource++kaab.theme.images/footer-new.jpg) no-repeat top right white;
+    height: 72px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    text-align: left;
+}
+
+#portal-footer p {
+    margin: 0px;
+    padding: 55px 0px 0px 57px;
+}
+
+#portal-footer p a {
+    color: #339999;
+}

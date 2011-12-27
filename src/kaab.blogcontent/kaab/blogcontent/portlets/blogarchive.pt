@@ -1,0 +1,46 @@
+<dl class="portlet portletBlogArchivePortlet"
+	id="recent-blogentries-portlet"
+    i18n:domain="kaab.blogcontent.portlets">
+
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+        <a href="" tal:attributes="href view/recently_modified_link">
+           Aktuell
+        </a>
+        <span class="portletTopRight"></span>
+    </dt>
+	
+	<tal:entries tal:define="plone_view context/@@plone;
+                          	 getIcon nocall:plone_view/getIcon;
+                             normalizeString nocall:plone_view/normalizeString;
+                             toLocalizedTime nocall:plone_view/toLocalizedTime"
+			tal:repeat="obj view/recent_entries">
+    <dd class="portletItem">
+        <a href=""
+			tal:attributes="href string:${obj/getURL}/view;
+							title obj/Description;"
+			tal:content="obj/pretty_title_or_id">
+			Title
+		</a>
+		<span class="portletItemDetails"
+				tal:content="python:toLocalizedTime(obj.ModificationDate)">
+				June 21</span>
+    </dd>
+	</tal:entries>
+	<dd class="portletItem"
+		tal:condition="not: view/recent_entries"
+		i18n:translate="box_recent_no_items">
+		No entries added yet
+	</dd>
+
+    <dd class="portletFooter">
+        <span class="portletBottomLeft"></span>
+        <a href=""
+			class="archive-link"
+			tal:attributes="href view/recently_modified_link">
+            Archiv
+        </a>
+        <span class="portletBottomRight"></span>
+    </dd>
+
+</dl>

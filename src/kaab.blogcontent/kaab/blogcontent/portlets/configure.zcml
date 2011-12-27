@@ -1,0 +1,36 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="kaab.blogcontent">
+
+    <!-- Ensure Plone's portlets ZCML has already been processed;
+         without this, we may get a permission lookup error
+      -->
+    <include package="plone.app.portlets" />
+
+	<!-- -*- extra stuff goes here -*- -->
+
+     <plone:portlet
+         name="kaab.blogcontent.portlets.BlogArchive"
+         interface=".blogarchive.IBlogArchive"
+         assignment=".blogarchive.Assignment"
+         view_permission="zope2.View"
+         edit_permission="cmf.ManagePortal"
+         renderer=".blogarchive.Renderer"
+         addview=".blogarchive.AddForm"
+         editview=".blogarchive.EditForm"
+         />
+
+
+     <plone:portlet
+         name="kaab.blogcontent.portlets.BlogThemes"
+         interface=".blogthemes.IBlogThemes"
+         assignment=".blogthemes.Assignment"
+         view_permission="zope2.View"
+         edit_permission="cmf.ManagePortal"
+         renderer=".blogthemes.Renderer"
+         addview=".blogthemes.AddForm"
+         />
+
+
+</configure>
