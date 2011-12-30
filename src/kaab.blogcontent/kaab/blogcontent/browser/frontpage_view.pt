@@ -8,7 +8,8 @@
 <body>
     <div metal:fill-slot="main">
         <tal:main-macro metal:define-macro="main">
-	<div id="content">
+	<div id="content-core"
+	    tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
 
 		<tal:blogentries tal:condition="view/has_entries">
 		<tal:block tal:define="entries view/blogentries">

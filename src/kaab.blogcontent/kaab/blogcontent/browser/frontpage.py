@@ -21,22 +21,22 @@ class FrontPageView(BrowserView):
     front page browser view
     """
     template = ViewPageTemplateFile('frontpage_view.pt')
-    
+
     def __call__(self):
         return self.template()
-    
+
     @property
     def portal_catalog(self):
         return getToolByName(self.context, 'portal_catalog')
-    
+
     @property
     def portal(self):
         return getToolByName(self.context, 'portal_url').getPortalObject()
-    
+
     def has_entries(self):
         """test if matching blogentries exist"""
         return len(self.blogentries()) > 0
-    
+
     @memoize
     def blogentries(self):
         """dict of recently modified blogentries"""
@@ -53,13 +53,15 @@ class FrontPageView(BrowserView):
                 for r in catalog(object_provides=IBlogEntry.__identifier__,
                                 sort_on='modified',
                                 sort_order='reverse',
-                                review_state='published')[:6]
-                ]
-    
+                                review_state='published')[:6]]
+
     def localize(self, time):
         """localize the datetime information for modification date"""
-        return self._time_localizer()(time, None, aq_inner(self.context), domain='plonelocales')
-    
+        return self._time_localizer()(time.isoformat(),
+                                      long_format=True,
+                                      context=self.context,
+                                      domain='plonelocales')
+
     @memoize
     def _time_localizer(self):
         """time localizer function"""
