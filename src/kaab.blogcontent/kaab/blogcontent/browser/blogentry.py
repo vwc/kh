@@ -26,7 +26,7 @@ class BlogEntryView(BrowserView):
         context = aq_inner(self.context)
         image_provider = IImageProvider(context)
         return image_provider.tag
-    
+
     def filed_under(self):
         """query the parent blogfolder and make this information
         accessable"""
