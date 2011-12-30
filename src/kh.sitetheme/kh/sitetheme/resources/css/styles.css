@@ -314,7 +314,7 @@ html, body {
 #content {
     line-height: 1.5em;
     clear: both;
-    font-size: 80%;
+    font-size: 90%;
     margin: 1em 0.25em 2em 0.25em;
 }
 
@@ -335,7 +335,7 @@ dl.portlet {
 #content a:link,
 dl.portlet a:link {
     color: #205c90;
-    border-bottom: 0.1em solid #ccc;
+    border-bottom: 0em solid #ccc;
 }
 
 #content a:visited,
@@ -860,7 +860,7 @@ dl.error dd {
 
 #contentActionMenus {
     float: right;
-    background: #75ad0a;
+    background: #333;
     margin: 0;
     position: relative;
     top: -0.23em;
