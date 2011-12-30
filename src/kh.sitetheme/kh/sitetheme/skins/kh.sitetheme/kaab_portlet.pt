@@ -1,0 +1,56 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      i18n:domain="plone">
+<body>
+<div metal:define-macro="portlet">
+
+<dl class="portlet" id="portlet-kaab"
+    tal:define="portal_state context/@@plone_portal_state;
+                portal_url portal_state/portal_url">
+
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+            Katharina Hoelzl
+        <span class="portletTopRight"></span>
+    </dt>
+
+	    <dd class="portletItem">
+			<ul id="blogThemes"
+			    class="navTree">
+				<li class="navItem">
+					  <a href=""
+			             class="link-category"
+			             tal:attributes="href string:${portal_url}/about">
+			            About
+			          </a>
+				</li>
+				<li class="navItem">
+					  <a href=""
+			             class="link-category"
+			             tal:attributes="href string:${portal_url}/kontakt">
+			            Kontakt
+			          </a>
+				</li>
+				<li class="navItem">
+					  <a href=""
+			             class="link-category"
+			             tal:attributes="href string:${portal_url}/impressum">
+			            Impressum
+			          </a>
+				</li>
+			</ul>
+	    </dd>
+
+    <dd class="portletFooter">
+        <span class="portletBottomLeft"></span>
+        <span>
+           &nbsp;
+        </span>
+        <span class="portletBottomRight"></span>
+    </dd>
+
+</dl>
+
+</div>
+</body>
+</html>
