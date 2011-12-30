@@ -57,8 +57,8 @@ class FrontPageView(BrowserView):
 
     def localize(self, time):
         """localize the datetime information for modification date"""
-        return self._time_localizer()(time.isoformat(),
-                                      long_format=True,
+        return self._time_localizer()(time,
+                                      long_format=False,
                                       context=self.context,
                                       domain='plonelocales')
 
