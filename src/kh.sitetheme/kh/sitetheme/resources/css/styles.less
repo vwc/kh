@@ -22,23 +22,14 @@ iframe { border-width: 0; border-style:none; }
 
 /* @end */
 
-/* @group LESS CSS predefined variables */
-
-@color: #545454;
-@background-color: #d7d7d7;
-@border: #333;
-
-/* @end */
-
 /* @group Basics */
 
 body {
-    font: 100% 'Times New Roman',Times,Verdana,Lucida,Helvetica,Arial,sans-serif;
+    font: 100% 'Times New Roman', Times, Verdana, Lucida, Helvetica, Arial, sans-serif;
     background: White;
     color: Black;
     /* width: 58em; margin: 1em auto; */
 }
-
 
 h1, h2, h3, h4, h5, h6 {
     font-family: "Helvetica Neue", Arial, FreeSans, sans-serif;
@@ -68,7 +59,7 @@ h6 {
     font-size: 0.8em;
 }
 h2, h3, h4, h5, h6 {
-    color: @color;
+    color: #444;
 }
 h2 a, h3 a, h4 a {
     border-bottom: none !important;
@@ -132,7 +123,8 @@ html, body {
 }
 
 #top-wrapper {
-    background: @background-color;
+ /*   background: #d7d7d7; */
+/*    background: #ccc; */
 }
 
 #header-wrapper {
@@ -155,6 +147,7 @@ html, body {
 /* @group Header */
 
 #header {
+    border: 0px solid #333;
     width:960px;
 }
 
@@ -163,42 +156,27 @@ html, body {
 }
 
 #logo {
-    background: url(../images/logo.png) 0px 0px no-repeat transparent;
+    background: url(../images/header_new.png) 0px 0px no-repeat transparent;
     margin: 0px;
-    width: 263px;
-    height: 103px;
+    width: 1000px;
+    height: 175px;
     display: block;
     text-indent: -3000px;
     overflow: hidden;
     border: none;
 }
 
-#search {
-    width: 300px;
-    float:right;
-    margin: 10px 10px 0px 0px;
+#editbar-wrapper {
+    width: 960px;
+    margin: 0px auto;
 }
-
-#search-site {
-    background: #fff;
-    border: 1px solid #333;
-    height: 28px;
-    width: 200px;
-    margin: 0px;
-}
-
-#search-site-button {
-    background: #fff;
-    border: 1px solid #333;
-    color: #000;
-    font-family: Helvetica, sans-serif;
-    font-weight: normal;
-    font-size: 0.8em;
-    text-transform: uppercase;
-    width: 81px;
-    height: 30px;
-    text-align: right;
-    padding-right: 6px;
+#edit-bar {
+    background-color: #000;
+    border: 0.25em solid #000;
+    font-size: 80%;
+    min-height: 2em;
+    margin-bottom: 1em;
+    padding-top: 0.05em;
 }
 
 #navigation {
@@ -216,22 +194,40 @@ html, body {
 
 #portal-globalnav {
     clear: both;
-    font-size: 80%;
-    background: #ddd;
-    /* ensure top navigation dont touches portlets, content etc.. #10491 */
-    margin: 0 0 1em 0;
+    margin: 0px 0px 5px 0px;
+    padding: 10px 10px 5px 120px;
+    background: url(../images/globalnav.jpg) no-repeat right bottom white;
+    height: 30px;
+    text-align: center;
+    font-family: Arial;
 }
 #portal-globalnav li {
+    border: 0px;
+    padding: 0px;
+    margin: 0px 15px 0px 0px;
+    float: left;
+    background: transparent;
 }
 #portal-globalnav li a {
-    display: inline-block;
-    padding: 0.5em 1em 2em 1em;
-    background: #ddd;
-    min-width: 6em;
-    white-space: normal;
-    /*TODO: Once we have removed the whitespace from the nav template, this can be put back*/
-    /*border-bottom: 0.1em solid White;*/
-    border-right: 0.1em solid white;
+    color: black;
+    font-size: 100%;
+    float: left;
+    height: 14px;
+    border: 0px;
+    border-bottom: 1px solid black;
+    margin: 0px;
+    padding: 8px 0px 0px 0px;
+    text-transform: none;
+    background: transparent;
+}
+
+#portal-globalnav li.selected a {
+    color: #66ccff;
+    background: transparent;
+    border: 0px;
+    height: 14px;
+    margin: 0px;
+    padding: 8px 0px 0px 0px;
 }
 
 #portal-globalnav .selected a,
@@ -244,12 +240,12 @@ html, body {
     color: #205c90;
 }
 
-#portal-personaltools {
+/*#portal-personaltools {
     float: right;
     background: #e3e3e3;
     position: relative;
     z-index: 3; /* personaltools should be above #portal-header (with z-index: 2) */
-    top: 0;
+ /*   top: 0;
     right: 0;
     padding: 0.25em 0.5em;
     font-size: 80%;
@@ -259,7 +255,17 @@ html, body {
     -webkit-border-bottom-left-radius: 0.5em;
     -moz-border-radius-bottomleft: 0.5em;
     -moz-border-radius-bottomright: 0.5em;
+}*/
+
+#portal-personaltools {
+    background: white;
+    border: 0px;
 }
+
+#portal-personaltools li a {
+    color: #66ccff;
+}
+
 #portal-personaltools #anon-personalbar a {
     float: left;
     margin-right: 0.5em;
@@ -290,63 +296,28 @@ html, body {
 
 /* @group sidebar */
 
-#sidebar {
-}
+#sidebar { margin-left: 15px; }
 
-#sidebar-header {
-    padding: 15px 10px;
-}
+#sidebar-header { padding: 15px 10px; }
 
-#sidebar-header h2 {
-    font-size: 0.9em;
-}
+#sidebar-header h2 {font-size: 0.9em; }
 
 #sidebar-header h3 {
     font-size: 0.8em;
     color: #444;
     font-weight: normal;
-}
-
+    }
 /* @end */
-
-/* @group Splash Boxes */
-
-.splashBox {
-    border: 1px solid #eee;
-    background: #eee;
-    padding: 5px;
-    margin-bottom: 5px;
-}
-
-.splashBoxContent {
-    border: 1px solid #ddd;
-    background: white;
-    padding: 5px;
-}
-
-/* @ end */
 
 /* @group Content Area */
 
 #content {
     line-height: 1.5em;
     clear: both;
-    font-size: 80%;
+    font-size: 90%;
     margin: 1em 0.25em 2em 0.25em;
 }
 
-/* Special case of #content - TinyMCE */
-body#content {
-    margin: 1em;
-}
-
-#content h1 {
-    margin-top: 0.5em;
-}
-
-#content h1.documentFirstHeading {
-    margin-top: 0;
-}
 
 #content p,
 #content table,
@@ -364,7 +335,7 @@ dl.portlet {
 #content a:link,
 dl.portlet a:link {
     color: #205c90;
-    border-bottom: 0.1em solid #ccc;
+    border-bottom: 0em solid #ccc;
 }
 
 #content a:visited,
@@ -394,15 +365,14 @@ dl.portlet a:hover {
 #category a.link-category {
     color: black;
     padding: 0.25em 0.5em;
-    background: #ddd;
-    border-radius: 0.5em;
-    -webkit-border-radius: 0.5em;
-    -moz-border-radius: 0.5em;
 }
 #category a.link-category:hover {
     background: #205c90;
     color: White;
     border-color: #205c90;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
 }
 #category .separator {
     display: none;
@@ -890,7 +860,7 @@ dl.error dd {
 
 #contentActionMenus {
     float: right;
-    background: #75ad0a;
+    background: #333;
     margin: 0;
     position: relative;
     top: -0.23em;
@@ -1547,8 +1517,8 @@ div.overlay .formControls a {
 
 #footer-wrapper {
 /* Sticky footer */
-    height: 16em;
-	background: #ccc;
+
+
 }
 
 #push {
@@ -1557,16 +1527,17 @@ div.overlay .formControls a {
 }
 
 #footer-gradient {
-	background: url(../images/gradient.png) repeat-x 0% 0% transparent;
-	height: 20px;
+
 }
 
 
 #footer {
+    background: url(../images/footer_new.png) repeat-x 0% 0% transparent;
 	color: White;
 	font-family: "Lucida Grande", Verdana, FreeSans, sans-serif;
 	margin: 0 auto;
 	padding: 1em 0;
+	height: 100px;
 	width: 960px;
 }
 
@@ -1664,3 +1635,414 @@ div.overlay .formControls a {
     display: none;
 }
 /* @end */
+/*old css */
+/* Special case of #content - TinyMCE */
+body#content {
+    margin: 1em;
+}
+
+#content h1 {
+    margin-top: 0.5em;
+}
+
+#content h2 {
+    font-size: 120%;
+    border: 0px;
+    color: #272526;
+}
+
+#content h3 {
+    font-size: 110%;
+    color: #76797c;
+    font-weight: normal;
+}
+
+#content h1.documentFirstHeading {
+    margin-top: 0;
+}
+
+/* blogitem */
+.blogItem {
+}
+
+.entryHeading {
+    border: 0px;
+    color: #272526;
+    font-size: 145%;
+	margin: 10px 0px 10px 60px;
+}
+
+.entryHeading a:link {
+    text-decoration:none;
+    color: #272526 !important;
+    font-weight: normal !important;
+}
+
+.entryHeading a:visited {
+    text-decoration:none;
+    color: #272526 !important;
+    font-weight: normal;
+}
+.entryHeading a:hover {
+    text-decoration:none;
+    color: #66ccff !important;
+    font-weight: normal;
+}
+
+.entryDescription {
+    margin: 0px 200px 0px 59px;
+    line-height: 110%;
+    font-size: 100%;
+    font-weight: normal
+}
+
+.entryDescriptionSmall {
+    margin: 0px 200px 0px 59px;
+    line-height: 110%;
+    font-size: 100%;
+    font-weight: normal
+}
+
+.entryDiscreet {
+    margin-right: 30px;
+}
+
+span.greyText {
+    color: #76797c;
+}
+
+span.magentaText,
+h2.magenta,
+h3.magenta {
+    color: #990066 !important;
+}
+
+span.greenText,
+h2.green,
+h3.green {
+    color:#66ccff !important;
+}
+/*blogitem - ende- */
+
+.dotted-line {
+    background:  url(../images/dotted.gif) repeat-x 0px 0px white;
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+    line-height: 2px;
+    clear: both;
+}
+
+/****** @ folder_summary_view *********/
+
+.tileItem,
+.vevent {
+    font-size: 14px;
+    border: 0px;
+}
+
+.documentByLine div.catIntro {
+    display: none;
+}
+
+#category {
+    padding: 0px 0px 0px 60px;
+    margin: 0px 0px 0px 0px;
+    font-family: Arial;
+}
+
+#category a.link-category {
+    color: #66ccff !important;
+    font-weight: normal;
+}
+
+.documentByLine a.link-category {
+    color: #66ccff !important;
+    font-size: 110%;
+    text-decoration: none;
+}
+
+.tileDate {
+    width: 150px;
+    margin: 0px;
+    float: right;
+    color: #66ccff;
+}
+
+.tileItemBody {
+    padding: 0px;
+	margin: 0px;
+    font-size: 100% !important;
+    line-height: 110%;
+}
+
+.tileHeadline {
+    font-size: 140%;
+    margin-bottom: 15px;
+    color: #272625;
+    
+}
+
+p.tileBody {
+    line-height: 110%;
+    font-size: 14px !important;
+    font-weight: normal;
+}
+
+.tileBody .description {
+    font-size: 110%;
+    line-height: 115%;
+    color: #272625;
+}
+
+.discreet,
+.entryDiscreet {
+    color: #272625;
+    font-size: 90%;
+    text-align: right;
+    font-weight: normal;
+    text-transform: lowercase;
+}
+
+p.discreet a:link,
+.entryDiscreet a:link {
+    color: #66ccff !important;
+    text-decoration: none;
+    font-weight: normal !important;
+}
+
+p.discreet a:visited,
+.entryDiscreet a:visited {
+    color: #66ccff !important;
+    text-decoration: none;
+    font-weight: normal;
+}
+p.discreet a:hover,
+.entryDiscreet a:hover {
+    color: #272625;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+
+.banner-image {
+    margin: 10px 0px 15px 60px;
+    padding: 0px;
+}
+
+.entryImage {
+    margin: 10px 0px 15px 60px;
+    padding: 0px;
+}
+
+/** end content definitions **/
+
+/** @ documentActions **/
+
+.documentActions {
+    border: 0px;
+    background: url(++resource++kaab.theme.images/dotted.gif) left top repeat-x white;
+    padding-right: 20px;
+}
+
+/** @ discussion **/
+
+.discussion {
+    margin: 0px 200px 0px 120px;
+}
+
+.discussion input.standalone {
+    background: #66ccff;
+    color: white;
+    border-color: black;
+    padding-left: 0px;
+}
+
+.comment {
+    background: white;
+    border: 2px dotted #ccc;
+}
+
+.comment h3 {
+    color: #66ccff;
+    border: 0px;
+    background: url(++resource++kaab.theme.images/dotted.gif) left bottom repeat-x transparent;
+    margin: 0px;
+    padding: 0px;
+}
+
+.comment h3 a {
+    background: transparent;
+    padding: 0px;
+}
+
+.comment input.standalone,
+.comment input.destructive {
+    background: white;
+    border-color: black;
+    color: #66ccff;
+    padding-left: 0px;
+}
+
+.commentBody {
+    font-size: 90%;
+    line-height: 100%;
+}
+
+
+/** end discussion **/
+
+/** @ portlet definitions **/
+
+dl.portlet {
+   background: url(++resource++kaab.theme.images/dot.jpg) left bottom repeat-x white;
+   border: 0px;
+   padding-bottom: 5px;
+   font-family: Arial;
+   font-size: 90%;
+}
+
+dt.portletHeader {
+    border: 0px;
+    background: transparent;
+    color: #66ccff;
+    font-size: 120%;
+}
+
+dt.portletHeader a {
+    color: #66ccff;
+    text-transform: none;
+}
+
+.portletItem {
+    border: 0px;
+    padding: 5px 0px 5px 0px;
+}
+
+dd.portletFooter {
+    background:transparent;
+    border: 0px;
+}
+
+/** end portlet definitions **/
+
+/*** @ portlet-blogthemes **/
+
+#portlet-blogthemes .portletHeader,
+#portlet-kaab .portletHeader {
+    text-transform: none;
+}
+
+#portlet-blogthemes #blogThemes,
+#portlet-kaab #blogThemes {
+    padding: 0px 0px 0px 3px;
+    width: 100%;
+}
+
+#recent-blogentries-portlet .portletItem {
+    padding: 0px 4px 0px 16px;
+    margin: 0px;
+}
+
+#blogThemes .navItem a.link-category,
+#recent-blogentries-portlet .portletItem a {
+    color: black;
+    text-decoration:underline;
+}
+
+#blogThemes .navItem a:hover,
+#recent-blogentries-portlet .porteltItem a:hover {
+    color: #205c90 !important;
+}
+
+#recent-blogentries-portlet .portletFooter {
+    text-align: left;
+	background: url(++resource++kaab.theme.images/dot.jpg) left top repeat-x white;
+	padding-top: 10px;
+}
+
+#recent-blogentries-portlet .portletFooter a.archive-link {
+    font-size: 120%;
+    color: #66ccff;
+    padding-left: 3px;
+}
+
+/**@ navtree.css **/
+
+.portletNavigationTree {
+    padding: 0; 
+    list-style: none !important;
+    list-style-image: none !important; 
+    line-height: 1em;
+}
+
+.portletNavigationTree img {
+    display: none;
+}
+
+.navTree {
+    list-style: none; 
+    list-style-image: none; 
+    margin-top: 1px;
+    margin-left: 13px;
+}
+.navTree li {
+    margin-bottom: 1px;
+}
+.navTreeItem {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+.navTreeItem a,
+dd.portletItem .navTreeItem a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 0px;
+ /**   font-size: 100%; **/
+}
+.navTreeItem a:hover,
+dd.portletItem .navTreeItem a:hover {
+    background-color: transparent;
+    color: #66ccff;
+    border: 0px solid white;
+}
+.navTreeCurrentItem {
+    background-color: transparent;
+    color: #66ccff !important;
+    border: 0px solid white !important;
+}
+li.navTreeCurrentItem {
+    display: block;
+    padding: 0 0 0 1px;
+    margin: 0 0 2px -1px;
+}
+li.navTreeCurrentItem a,
+li.navTreeCurrentItem a:hover {
+    display: block;
+    border: 0px solid white;
+    min-height: 1.6em;
+    line-height: 1.6em;
+    height: auto;
+}
+
+/** end of navtree.css **/
+/** @ portal footer **/
+
+#portal-footer {
+    background: url(++resource++kaab.theme.images/footer-new.jpg) no-repeat top right white;
+    height: 72px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    text-align: left;
+}
+
+#portal-footer p {
+    margin: 0px;
+    padding: 55px 0px 0px 57px;
+}
+
+#portal-footer p a {
+    color: #66ccff;
+}
