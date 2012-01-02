@@ -51,6 +51,8 @@
 	    
 	    <!-- Copy over the contents of the page body -->
 	    <replace css:content-children="#content" css:theme-children="#content" />
+	    
+	    <after css:theme="#content" css:content="#viewlet-below-content" />
         
         <!-- Portal Columns -->
         <replace css:content-children="#portal-column-two > *" css:theme-children="#sidebar" />
