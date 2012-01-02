@@ -16,7 +16,6 @@ from kaab.blogcontent import blogcontentMessageFactory as _
 from kaab.blogcontent.interfaces import IBlogEntry
 
 
-
 class blogfolderView(BrowserView):
     """
     blogfolder browser view
@@ -46,7 +45,8 @@ class blogfolderView(BrowserView):
         catalog = getToolByName(context, 'portal_catalog')
         results = []
         for r in catalog(object_provides=IBlogEntry.__identifier__,
-                            path=dict(query='/'.join(context.getPhysicalPath()),
+                            path=dict(query='/'.join(
+                                        context.getPhysicalPath()),
                                         depth=1),
                             sort_on='modified',
                             sort_order='reverse',
@@ -60,10 +60,13 @@ class blogfolderView(BrowserView):
                                 comments=r.getObject().talkback.getReplies,
                                 modified=self.localize(r.modified)))
         return results
-        
+
     def localize(self, time):
         """localize the datetime information for modification date"""
-        return self._time_localizer()(time, None, aq_inner(self.context), domain='plonelocales')
+        return self._time_localizer()(time,
+                                      long_format=False,
+                                      context=self.context,
+                                      domain='plonelocales')
 
     @memoize
     def _time_localizer(self):
@@ -71,5 +74,3 @@ class blogfolderView(BrowserView):
         context = aq_inner(self.context)
         translation_service = getToolByName(context, 'translation_service')
         return translation_service.ulocalized_time
-        
-        
