@@ -45,7 +45,7 @@
 		             class="link-category"
 		             rel="tag"
 		             tal:content="theme"
-		             tal:attributes="href string:${context/portal_url}/search?theme%3Alist=${theme}">
+		             tal:attributes="href string:${context/portal_url}/archive_view?theme_filter%3Alist=${theme}">
 		            Category
 		          </a><tal:separator>__</tal:separator>
 		        </span>
@@ -55,7 +55,7 @@
 		             class="link-category"
 		             rel="tag"
 		             tal:content="category"
-		             tal:attributes="href string:${context/portal_url}/search?Subject%3Alist=${category}">
+		             tal:attributes="href string:${context/portal_url}/archive_view?subject_filter%3Alist=${category}">
 		            Category
 		          </a><tal:separator condition="not: repeat/category/end">__</tal:separator>
 		        </span>

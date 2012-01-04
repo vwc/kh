@@ -93,7 +93,7 @@
     				</a>
 				</span> |
 				<span>
-                Kommentare
+                    <a href="" tal:attributes="href fe/url">Kommentare</a>
                 </span>
                 <tal:comments tal:define="comments fe/comments;
                                           number_of_comments python:len(comments)">
@@ -167,7 +167,7 @@
     				</a>
 				</span> |
 				<span>
-                Kommentare
+                    <a href="" tal:attributes="href entry/url">Kommentare</a>
                 </span>
                 <tal:comments tal:define="comments entry/comments;
                                           number_of_comments python:len(comments)">

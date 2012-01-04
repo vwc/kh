@@ -82,8 +82,10 @@
 	    					Weiterlesen
 	    				</a>
 					</span> |
-					<span> 
-	                Kommentare
+					<span>
+					    <a href=""
+	       					tal:attributes="href entry/url">
+	                    Kommentare</a>
 	                </span>
 	                <tal:comments tal:define="comments entry/comments;
 	                                          number_of_comments python:len(comments)">
