@@ -32,9 +32,8 @@ BlogEntrySchema = schemata.ATContentTypeSchema.copy() + atapi.Schema((
     atapi.TextField(
         name='text',
         searchable=True,
-        allowable_content_types=('text/html'),
+        allowable_content_types=('text/html',),
         default_output_type='text/x-html-safe',
-        validators=('isTidyHtmlWithCleanup'),
         widget=atapi.RichWidget(
             label=_(u"Text"),
             description=_(u"Enter the main body text of this blog entry"),
