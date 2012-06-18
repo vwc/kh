@@ -1,8 +1,4 @@
-from zope.interface import implements, Interface
-
-from Acquisition import aq_inner, aq_parent
-
-from DateTime import DateTime
+from Acquisition import aq_inner
 
 from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -12,7 +8,6 @@ from Products.CMFPlone.utils import safe_unicode
 
 from plone.memoize.instance import memoize
 
-from kaab.blogcontent import blogcontentMessageFactory as _
 from kaab.blogcontent.interfaces import IBlogEntry
 
 

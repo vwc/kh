@@ -1,7 +1,7 @@
 """Definition of the Blog Folder content type
 """
 
-from zope.interface import implements, directlyProvides
+from zope.interface import implements
 
 from Products.Archetypes import atapi
 from Products.ATContentTypes.content import folder
@@ -14,7 +14,7 @@ from kaab.blogcontent.config import PROJECTNAME
 BlogFolderSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     # -*- Your Archetypes field definitions here ... -*-
-    
+
     atapi.TextField(
         name="text",
         searchable=True,
@@ -23,7 +23,8 @@ BlogFolderSchema = folder.ATFolderSchema.copy() + atapi.Schema((
         validators=('isTidyHtmlWithCleanup'),
         widget=atapi.RichWidget(
             label=_(u"Text"),
-            description=_(u"Enter optional introduction that will be listed above the content listing."),
+            description=_(u"Enter optional introduction that will be listed "
+                          u"above the content listing."),
             allow_file_upload=False,
             rows=15,
             )
@@ -38,7 +39,11 @@ BlogFolderSchema['title'].storage = atapi.AnnotationStorage()
 BlogFolderSchema['description'].storage = atapi.AnnotationStorage()
 BlogFolderSchema['text'].storage = atapi.AnnotationStorage()
 
-schemata.finalizeATCTSchema(BlogFolderSchema, folderish=True, moveDiscussion=False)
+schemata.finalizeATCTSchema(
+    BlogFolderSchema,
+    folderish=True,
+    moveDiscussion=False)
+
 
 class BlogFolder(folder.ATFolder):
     """A folder holding blogentries"""
