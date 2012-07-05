@@ -43,12 +43,18 @@ class FrontPageView(BrowserView):
                     categories=r.Subject,
                     theme=r.getTheme,
                     image=r.getObject().getImage,
-                    comments=r.getObject().talkback.getReplies,
+                    comments=self._talkback_info(r.getObject()).getReplies,
+                    #comments=r.getObject().talkback.getReplies,
                     modified=self.localize(r.modified))
                 for r in catalog(object_provides=IBlogEntry.__identifier__,
                                 sort_on='modified',
                                 sort_order='reverse',
                                 review_state='published')[:6]]
+
+    def _talkback_info(self, item):
+        context = aq_inner(self.context)
+        dtool = getToolByName(context, 'portal_discussion')
+        return dtool.getDiscussionFor(item)
 
     def localize(self, time):
         """localize the datetime information for modification date"""

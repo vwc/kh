@@ -78,8 +78,9 @@
 				<span> 
                     <a href="" tal:attributes="href entry/url">Kommentare</a>
                 </span>
-                <tal:comments tal:define="comments entry/comments;
-                                          number_of_comments python:len(comments)">
+                <tal:comments tal:condition="exists:entry/comments"
+                    tal:define="comments entry/comments;
+                                number_of_comments python:len(comments)">
 					(<span tal:content="number_of_comments">0</span>)
 				</tal:comments>
 				</div>
