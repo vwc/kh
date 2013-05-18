@@ -1,12 +1,10 @@
 from zope import schema
 from zope.interface import Interface
 
-from zope.app.container.constraints import contains
-from zope.app.container.constraints import containers
-
 from kaab.blogcontent import blogcontentMessageFactory as _
 
 # -*- extra stuff goes here -*-
+
 
 class IBlogFolder(Interface):
     """A folder holding blogentries"""
@@ -39,6 +37,7 @@ class IBlogEntry(Interface):
     text = schema.SourceText(title=_(u"Text"),
                             description=_(u"Enter the main body text of this blog entry"),
                             required=True)
+
 
 class IImageProvider(Interface):
     """A interface providing the appropriate html tag"""
